@@ -38,7 +38,7 @@ createResponder({
     cache: "cached",
     async run(interaction, { acao }) {
         const { member } = interaction;
-        const cargoId = "1390366073945325678";
+        const cargoId = "1390383978351034470";
 
         const temCargo = member.roles.cache.has(cargoId);
 

@@ -21,12 +21,16 @@ createCommand({
                 ephemeral: true,
             });
 
+            interaction.channel?.send(
+                `🐉 Este canal foi configurado para receber os avisos do Drogon!`
+            );
+
             setInterval(() => {
                 const now = new Date();
                 const minutes = now.getMinutes();
                 const currentHour = now.getHours();
                 const nextHour = (currentHour + 1) % 24;
-                const cargoId = "1390366073945325678";
+                const cargoId = "1390383978351034470";
 
                 if (minutes === 50 && nextHour % 2 === 0) {
                     interaction.channel?.send(
