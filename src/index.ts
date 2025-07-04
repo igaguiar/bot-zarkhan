@@ -32,9 +32,14 @@ await bootstrap({
                 const cargoId = "1390383978351034470";
 
                 if (minutes === 50 && nextHour % 2 === 0) {
-                    channel.send(
-                        `🐉 O Drogon aparecerá em 10 minutos! <@&${cargoId}>`
-                    );
+                    channel
+                        .bulkDelete(100, true)
+                        .then(() => {
+                            channel.send(
+                                `🐉 O Drogon aparecerá em 10 minutos! <@&${cargoId}>`
+                            );
+                        })
+                        .catch(console.error);
                 }
             }, 60 * 1000); // Executa a cada 1 minuto a verificação do horário
         }
